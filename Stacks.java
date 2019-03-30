@@ -52,7 +52,7 @@ public class Stack {
 
         while(start <= this.length()){
             if(this.stack[start] == 0)
-                value_check +=1;
+                value_check++;
             start++;
         }
         return value_check == start;
