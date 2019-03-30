@@ -1,15 +1,12 @@
 // Manmeet Singh
 /*
-
 Push — Inserts an element at the top
 Pop — Returns the top element after removing from the stack
 isEmpty — Returns true if the stack is empty
 Top — Returns the top element without removing from the stack
-
 3 <- Top
 2
 1 <- Last
-
 */
 
 public class Stack {
@@ -66,5 +63,17 @@ public class Stack {
     // return the top element of stack without removing it 
     int top(){
         return this.stack[top];
+    }
+
+    // sorts the value from min to max
+    void sort(){
+        int start, temp;
+        for(start = 0; start <= this.length()/2; start++){
+            if(this.stack[start] > this.stack[this.length()-start]){
+                temp = this.stack[start];
+                this.stack[start] = this.stack[this.length()-start];
+                this.stack[this.length()-start] = temp;
+            }
+        }
     }
 }
