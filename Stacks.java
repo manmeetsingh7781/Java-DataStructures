@@ -65,6 +65,6 @@ public class Stack {
 
     // return the top element of stack without removing it 
     int top(){
-        return this.stack[top--];
+        return this.stack[top];
     }
 }
