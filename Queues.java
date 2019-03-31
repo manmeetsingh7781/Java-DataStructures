@@ -70,7 +70,7 @@ class Queues {
     }
 
     // Checks if the queue is full
-    private boolean isFull(){
+    boolean isFull(){
         return this.front == this.limit-1;
     }
 
