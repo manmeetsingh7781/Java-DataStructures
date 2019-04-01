@@ -13,13 +13,46 @@ class Node {
     int data;
 
     // This points to the next Node
-    Node next;
+    Node Next;
 }
 
 public class LinkedList {
 
-    // Linked list is like a snail, a linear thing that has head and a tail, Imagine a snake is moving and the head is the first element 
-    // and its body is node that can be changed over time, and the tail is the last pointer that has a null
+    // Linked list is like a snail, a linear thing that has head and a tail, Imagine a snake is moving and the head is the first element and its body is node that can be changed over time, and the tail is the last pointer that has a null
 
+    Node head, tail;
+    private Node currunt;
+
+    LinkedList(){
+        this.head = new Node();
+        this.head.data = 0;
+        this.currunt = this.head;
+
+    }
+
+    void setData(int value) {
+        if (this.head.data == 0) {
+            this.head.data = value;
+            return;
+        }
+        this.currunt.Next = new Node();
+        this.currunt = this.currunt.Next;
+        this.currunt.data = value;
+        this.currunt.Next = null;
+        if(isNull())
+            this.tail = null;
+    }
+
+    private boolean isNull(){
+        return this.currunt.Next == null;
+    }
+
+    void showNodes(){
+        this.head = this.head.Next;
+        while(this.head != this.tail){
+            System.out.println(this.head.data);
+            this.head = this.head.Next;
+        }
+    }
 }
 
