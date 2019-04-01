@@ -25,16 +25,11 @@ public class LinkedList {
 
     LinkedList(){
         this.head = new Node();
-        this.head.data = 0;
         this.currunt = this.head;
         this.tail = null;
     }
 
     void setData(int value) {
-        if (this.head.data == 0 && this.tail == null) {
-            this.head.data = value;
-            return;
-        }
         this.currunt.Next = new Node();
         this.currunt = this.currunt.Next;
         this.currunt.data = value;
@@ -48,13 +43,13 @@ public class LinkedList {
     }
 
     void showNodes(){
-        this.head = this.head.Next;
-        while(this.head != this.tail){
-            System.out.println(this.head.data);
-            this.head = this.head.Next;
+        this.currunt = this.head.Next;
+        while(this.currunt != this.tail){
+            System.out.println(this.currunt.data);
+            this.currunt = this.currunt.Next;
         }
     }
+
+
 }
-
-
 
