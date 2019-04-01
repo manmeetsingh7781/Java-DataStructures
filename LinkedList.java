@@ -27,11 +27,11 @@ public class LinkedList {
         this.head = new Node();
         this.head.data = 0;
         this.currunt = this.head;
-
+        this.tail = null;
     }
 
     void setData(int value) {
-        if (this.head.data == 0) {
+        if (this.head.data == 0 && this.tail == null) {
             this.head.data = value;
             return;
         }
@@ -55,4 +55,6 @@ public class LinkedList {
         }
     }
 }
+
+
 
